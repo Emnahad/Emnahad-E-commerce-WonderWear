@@ -26,7 +26,7 @@ import java.util.List;
 //@Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-    private final RoleRepository roleRepository;
+   /* private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
@@ -126,5 +126,5 @@ public class AuthenticationService {
 
         savedToken.setValidatedAt(LocalDateTime.now());
         tokenRepository.save(savedToken);
-    }
+    }*/
 }

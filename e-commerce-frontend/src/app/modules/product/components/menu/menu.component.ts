@@ -29,8 +29,8 @@ export class MenuComponent implements OnInit{
   }
 
 
-  logout() {
-    this.keycloakService.logout()
+  async logout() {
+    await this.keycloakService.logout();
   }
 }
 

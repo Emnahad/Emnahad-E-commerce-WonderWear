@@ -31,21 +31,23 @@ export class KeycloakService {
     }
 
     console.log('Authenticating the user...');
-    const authenticated = await this._keycloak.init({
+    const authenticated = await this.keycloak.init({
       onLoad: 'login-required',
     });
 
     if (authenticated) {
-      this._profile = (await this._keycloak.loadUserProfile()) as UserProfile;
-      this._profile.token = this._keycloak.token || '';
+      this._profile = (await this.keycloak.loadUserProfile()) as UserProfile;
+      this._profile.token = this.keycloak.token || '';
     }
   }
 
   login() {
-    return this._keycloak?.login();
+    return this.keycloak?.login();
   }
 
   logout() {
-    return this._keycloak?.logout({ redirectUri: 'http://localhost:4200' });
+    //return this.keycloak?.accountManagement();
+    return this.keycloak?.logout();
+
   }
 }
